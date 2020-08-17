@@ -12,6 +12,8 @@ COPY . /home/app
 
 # RUN npm run build
 
+RUN npx sequelize-cli db:migrate
+
 # CMD ./scripts/start.sh
 
 CMD ["npm", "start"]
