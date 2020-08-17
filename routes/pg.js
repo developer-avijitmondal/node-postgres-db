@@ -1,7 +1,7 @@
 const { Pool, Client } = require('pg');
 require('dotenv').config();
 
-const client = new Client({
+const client = new Client({ //
     //database: process.env.DB_NAME,
     password: "postgres",
     user: "postgres",
