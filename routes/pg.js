@@ -3,6 +3,7 @@ require('dotenv').config();
 
 const client = new Client({ //
     //database: process.env.DB_NAME,
+    database: "node_test_db",
     password: "postgres",
     user: "postgres",
     host: "postgres"
