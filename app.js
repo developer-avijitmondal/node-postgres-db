@@ -5,10 +5,12 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var debug = require('debug')('node-postgres:server');
 var http = require('http');
+const client = require("./routes/pg");
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-
+var swaggerUiRoute = require('./routes/swagger');
+var businessUnitGroups = require('./routes/franchises/businessunitgroups');
 var app = express();
 
 // view engine setup
@@ -21,8 +23,11 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
+app.use('/', swaggerUiRoute);
 app.use('/users', usersRouter);
+
+app.use('/api/v1/businessunitgroups', businessUnitGroups);
+// app.use('/swagger', swaggerUiRoute);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

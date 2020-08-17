@@ -3,22 +3,29 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "nodemon app.js",
-    "start:dev": "nodemon --inspect=0.0.0.0:9229 dist/index.js",
-    "build": "tsc",
-    "build:watch": "tsc -w",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon app.js"
   },
   "dependencies": {
+    "async": "^3.2.0",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "dotenv": "^8.2.0",
     "express": "~4.16.1",
     "http-errors": "~1.6.3",
+    "http-status": "^1.4.2",
     "jade": "~1.11.0",
     "morgan": "~1.9.1",
     "nodemon": "^2.0.4",
     "pg": "^8.3.0",
-    "save": "^2.4.0"
+    "pg-hstore": "^2.3.3",
+    "pino": "^6.3.2",
+    "save": "^2.4.0",
+    "sequelize": "^5.21.7",
+    "sequelize-auto": "^0.4.29",
+    "sequelize-cli": "^5.5.1",
+    "swagger-jsdoc": "^4.0.0",
+    "swagger-tools": "^0.10.4",
+    "swagger-ui-express": "^4.1.4",
+    "winston": "^3.2.1"
   }
 }
