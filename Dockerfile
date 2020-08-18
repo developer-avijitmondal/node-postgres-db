@@ -5,14 +5,14 @@ FROM node:latest
 
 EXPOSE 3000 9229 5432
 
-# WORKDIR /home/app
+WORKDIR /home/app
 
-WORKDIR /
+# WORKDIR /
 
-# COPY package.json /home/app/
-# COPY package-lock.json /home/app/
+COPY package.json /home/app/
+COPY package-lock.json /home/app/
 
-COPY package*.json ./
+# COPY package*.json ./
 
 RUN npm ci
 
