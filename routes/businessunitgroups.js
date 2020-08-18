@@ -13,13 +13,13 @@ const {
 } = require('../services/franchises/businessunitgroupsService');
 
 
-router.get('/',VerifyToken,async (req, res, next) => {
+router.get('/',async (req, res, next) => {
     const payLoadQuery = req.query;
     const { status, error, type, result, total } = await getAll(payLoadQuery);
     return res.status(status).json({ error, type, total, result });
 });
 
-router.post('/',VerifyToken,async (req, res, next) => {
+router.post('/',async (req, res, next) => {
     const data = {
         businessunitgroupname:req.body.businessunitgroupname,
         createdby:req.body.createdby,
@@ -29,19 +29,19 @@ router.post('/',VerifyToken,async (req, res, next) => {
     return res.status(status).json({ error, type, result });
 });
 
-router.delete('/',VerifyToken,async (req, res, next) => {
+router.delete('/',async (req, res, next) => {
     const { status, error, type, result } = await deleteAll();
     return res.status(status).json({ error, type, result });
 });
 
-router.get('/:businessunitgroup_id',VerifyToken, async (req, res, next) => {
+router.get('/:businessunitgroup_id', async (req, res, next) => {
     console.log(req.body.params);
     const businessunitgroup_id = req.params.businessunitgroup_id;
     const { status, error, type, result } = await getOne(businessunitgroup_id);
     return res.status(status).json({ error, type, result });
 });
 
-router.put('/:businessunitgroup_id',VerifyToken,async (req, res, next) => {
+router.put('/:businessunitgroup_id',async (req, res, next) => {
     const businessunitgroup_id = req.params.businessunitgroup_id;
     const data = {
         businessunitgroupname:req.body.businessunitgroupname,
@@ -52,7 +52,7 @@ router.put('/:businessunitgroup_id',VerifyToken,async (req, res, next) => {
     return res.status(status).json({ error, type, result });
 });
 
-router.delete('/:businessunitgroup_id',VerifyToken, async (req, res, next) => {
+router.delete('/:businessunitgroup_id', async (req, res, next) => {
     const businessunitgroup_id = req.params.businessunitgroup_id;
     const { status, error, type, result } = await deleteOne(businessunitgroup_id);
     return res.status(status).json({ error, type, result });
