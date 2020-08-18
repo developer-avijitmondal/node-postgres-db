@@ -6,7 +6,8 @@ const client = new Client({ //
     database: "node_test_db",
     password: "postgres",
     user: "postgres",
-    host: "postgres"
+    host: "postgres",
+    //port: 9229
 });
 
 // const client = new Client({
@@ -18,7 +19,7 @@ const client = new Client({ //
 // client.connect();
 client.connect(function(err) {
     if (err) throw err;
-        console.log("Connected with Postgres Database!");
+    console.log("Connected with Postgres Database!");
 });
 
 module.exports = client;
