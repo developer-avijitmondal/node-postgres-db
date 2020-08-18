@@ -1,0 +1,4 @@
+migrate models with nodejs app command 
+=========================================
+https://phoenixnap.com/kb/deploy-postgresql-on-docker
+=========================================
