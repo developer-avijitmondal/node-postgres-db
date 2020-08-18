@@ -10,7 +10,7 @@ const client = require("./routes/pg");
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var swaggerUiRoute = require('./routes/swagger');
-var businessUnitGroups = require('./routes/franchises/businessunitgroups');
+var businessUnitGroups = require('./routes/businessunitgroups');
 var app = express();
 
 // view engine setup
