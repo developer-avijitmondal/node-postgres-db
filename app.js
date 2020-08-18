@@ -10,7 +10,7 @@ const client = require("./routes/pg");
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var swaggerUiRoute = require('./routes/swagger');
-// var businessUnitGroups = require('./routes/franchises/businessunitgroups');
+var businessUnitGroups = require('./routes/franchises/businessunitgroups');
 var app = express();
 
 // view engine setup
@@ -26,7 +26,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', swaggerUiRoute);
 app.use('/users', usersRouter);
 
-// app.use('/api/v1/businessunitgroups', businessUnitGroups);
+app.use('/api/v1/businessunitgroups', businessUnitGroups);
 // app.use('/swagger', swaggerUiRoute);
 
 // catch 404 and forward to error handler
