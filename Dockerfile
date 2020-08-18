@@ -24,6 +24,6 @@ COPY . .
 
 # RUN npx sequelize-cli db:migrate
 
-CMD ./scripts/start.sh
+#CMD ./scripts/start.sh
 
-# CMD ["npm", "start"]
+CMD ["npm", "start"]
