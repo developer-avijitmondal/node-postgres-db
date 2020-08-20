@@ -32,6 +32,7 @@ app.use(passport.initialize());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', swaggerUiRoute);
+app.use('/index', indexRouter);
 app.use('/users', usersRouter);
 
 app.use('/api/v1/businessunitgroups', businessUnitGroups);
