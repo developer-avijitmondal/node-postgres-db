@@ -2,3 +2,11 @@ migrate models with nodejs app command
 =========================================
 https://phoenixnap.com/kb/deploy-postgresql-on-docker
 =========================================
+
+docker-compose up --build
+
+docker exec -it [container_name] psql -U [postgres_user]
+
+docker exec -it CONTAINER_ID /bin/bash
+
+sequelize db:migrate 
