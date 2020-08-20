@@ -14,9 +14,10 @@ const {
 
 
 router.get('/',async (req, res, next) => {
-    const payLoadQuery = req.query;
-    const { status, error, type, result, total } = await getAll(payLoadQuery);
-    return res.status(status).json({ error, type, total, result });
+    // const payLoadQuery = req.query;
+    // const { status, error, type, result, total } = await getAll(payLoadQuery);
+    // return res.status(status).json({ error, type, total, result });
+    return res.status(status).json({ result : "hii"});
 });
 
 router.post('/',async (req, res, next) => {
